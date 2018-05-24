@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+>
+  <data>
+    <variable name="isOTP" type="Boolean"/>
+    <variable name="isOTPRequested" type="Boolean"/>
+    <import type="com.harishdevs.dv_t.R"/>
+    <import type="android.view.View"/>
+  </data>
+  <ScrollView android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+      <android.support.v7.widget.AppCompatTextView android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:alpha="0.7"
+          android:text="@string/label_login"
+          android:textColor="@android:color/black"
+          android:textSize="28sp"
+          android:textStyle="bold"/>
+
+      <android.support.v7.widget.AppCompatTextView android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:layout_marginTop="16dp"
+          android:alpha="0.5"
+          android:text="@string/label_login_using"
+          android:textColor="@android:color/black"/>
+
+      <RelativeLayout android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+
+        <android.support.v7.widget.SwitchCompat android:id="@+id/switch_login_using"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="8dp"
+            android:checked="@={ isOTP }"
+            android:rotation="180"/>
+
+        <android.support.v7.widget.AppCompatTextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/switch_login_using"
+            android:layout_alignTop="@id/switch_login_using"
+            android:layout_toStartOf="@id/switch_login_using"
+            android:alpha="0.7"
+            android:gravity="center"
+            android:text="@string/label_otp"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"/>
+
+        <android.support.v7.widget.AppCompatTextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/switch_login_using"
+            android:layout_alignTop="@id/switch_login_using"
+            android:layout_toEndOf="@id/switch_login_using"
+            android:alpha="0.7"
+            android:gravity="center"
+            android:text="@string/label_pin"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"/>
+      </RelativeLayout>
+
+      <android.support.design.widget.TextInputLayout android:id="@+id/layout_edit_phone_no"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:hint="@string/hint_phone_no">
+
+        <android.support.design.widget.TextInputEditText android:id="@+id/edit_phone_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:maxLength="10"/>
+      </android.support.design.widget.TextInputLayout>
+
+      <android.support.design.widget.TextInputLayout android:id="@+id/layout_edit_otp_pin"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:hint="@{ isOTP ? @string/label_otp : @string/label_pin }"
+          android:visibility="@{ (!isOTP || isOTPRequested) ? View.VISIBLE : View.GONE }">
+
+        <android.support.design.widget.TextInputEditText android:id="@+id/edit_otp_pin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberPassword"
+            android:maxLength="6"/>
+      </android.support.design.widget.TextInputLayout>
+
+      <android.support.v7.widget.AppCompatButton android:id="@+id/btn_submit"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="16dp"
+          android:text="@{ (!isOTP || isOTPRequested) ? @string/action_login : @string/action_request_otp }"/>
+    </LinearLayout>
+  </ScrollView>
+</layout>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:padding="16dp">
+
+    <android.support.v7.widget.AppCompatTextView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:alpha="0.7"
+        android:text="@string/label_create_pin"
+        android:textColor="@android:color/black"
+        android:textSize="28sp"
+        android:textStyle="bold"/>
+
+    <android.support.design.widget.TextInputLayout android:id="@+id/layout_edit_pin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_pin">
+
+      <android.support.design.widget.TextInputEditText android:id="@+id/edit_pin"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:inputType="numberPassword"
+          android:maxLength="6"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout android:id="@+id/layout_edit_cnf_pin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_confirm_pin">
+
+      <android.support.design.widget.TextInputEditText android:id="@+id/edit_cnf_pin"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:inputType="numberPassword"
+          android:maxLength="6"/>
+    </android.support.design.widget.TextInputLayout>
+
+
+    <android.support.v7.widget.AppCompatButton android:id="@+id/btn_submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/action_create_pin"/>
+  </LinearLayout>
+</layout>

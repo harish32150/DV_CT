@@ -1,0 +1,21 @@
+<resources>
+  <string name="app_name">DV_T</string>
+
+  <string name="label_login">Login</string>
+  <string name="label_login_using">Login Using:</string>
+  <string name="label_otp">OTP</string>
+  <string name="label_pin">PIN</string>
+  <string name="label_create_pin">Create PIN</string>
+
+
+  <string name="hint_phone_no">Phone No</string>
+
+
+  <string name="action_login">Login</string>
+  <string name="action_request_otp">Request OTP</string>
+
+  <string name="error_no_internet">No Internet</string>
+  <string name="hint_confirm_pin">Confirm PIN</string>
+  <string name="hint_pin">PIN</string>
+  <string name="action_create_pin">Create PIN</string>
+</resources>
